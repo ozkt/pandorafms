@@ -14,7 +14,8 @@ RUN dnf config-manager --set-enabled powertools
 # Install console dependencies
 RUN dnf install -y --setopt=tsflags=nodocs \
         php \
-        php-mcrypt \php-cli \
+        php-mcrypt \
+        php-cli \
         php-gd \
         php-curl \
         php-session \
@@ -94,7 +95,6 @@ RUN mkdir -p /run/php-fpm/ ; chown -R root:apache /run/php-fpm/
 # Not installed perl-Net-Telnet gtk-update-icon-cach ghostscript-fonts
 
 # Install server dependencies 
-
 RUN dnf install -y  --setopt=tsflags=nodocs \
         GeoIP \
         GeoIP-GeoLite-data \
